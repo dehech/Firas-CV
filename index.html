@@ -6,20 +6,27 @@
     <title>CV - Firas Dahech</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
         .container {
             max-width: 900px;
-            margin: auto;
+            margin: 20px auto;
             padding: 20px;
-            background: white;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1, h2 {
-            color: #333;
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 5px;
         }
         ul {
             list-style-type: none;
@@ -27,20 +34,41 @@
         }
         ul li {
             padding: 8px 0;
+            line-height: 1.6;
         }
-        .contact, .skills, .languages, .experience, .education {
+        .contact, .skills, .languages, .experience, .education, .software {
             margin-bottom: 30px;
         }
-        .skills ul, .experience ul, .education ul, .languages ul {
+        .skills ul, .experience ul, .education ul, .languages ul, .software ul {
             list-style-type: disc;
             padding-left: 20px;
+        }
+        .profile {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 5px solid #2980b9;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Additional styling for hover effect */
+        ul li:hover {
+            background-color: #f0f8ff;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Firas Dahech</h1>
-        <p>Élève ingénieur en informatique à Iteam-University, spécialisé en Cloud Computing et Virtualisation. Actuellement à la recherche d’un stage PFE.</p>
+        <div class="profile">
+            <p>Élève ingénieur en informatique à Iteam-University, spécialisé en Cloud Computing et Virtualisation. Actuellement à la recherche d’un stage PFE.</p>
+        </div>
 
         <div class="contact">
             <h2>Contact</h2>
@@ -55,10 +83,10 @@
             <h2>Compétences</h2>
             <ul>
                 <li>Cloud Computing & Virtualisation</li>
-                <li>Administration des systèmes Linux, Réseaux, et Bases de données (Oracle), Active Directory</li>
+                <li>Administration des systèmes Linux, Windows, Réseaux, et Bases de données (Oracle, Active Directory)</li>
                 <li>Conteneurisation (Docker, Kubernetes, OpenShift)</li>
                 <li>CI/CD avec GitHub Actions, Jenkins</li>
-                <li>Infrastructure cloud: AWS, AZURE, OCI, OpenStack</li>
+                <li>Infrastructure cloud: AWS, OCI, OpenStack</li>
                 <li>Gestion de données: Hadoop, Spark, MapReduce</li>
                 <li>Réseaux: CCNA 1, CCNA 2, CCNA 3</li>
                 <li>Langages de programmation: Python, Bash, SQL, PL/SQL, Java, PHP, HTML, CSS, JavaScript, C</li>
@@ -69,7 +97,7 @@
         <div class="experience">
             <h2>Expériences</h2>
             <ul>
-                <li><strong>Stage de perfectionnement (TSI)</strong> - Juillet à Septembre 2024<br>Administration des Réseaux (Active Directory).</li>
+                <li><strong>Stage de perfectionnement (TSI)</strong> - Juillet à Septembre 2024<br>Conception et déploiement d'une solution de gestion d'infrastructure cloud.</li>
                 <li><strong>Stage de fin d’étude (Tunisie Telecom)</strong> - Juin à Février 2022<br>Mise en place d’une solution BIG DATA en Cloud privé.</li>
                 <li><strong>Stage de Perfectionnement (Les Ciments de Bizerte)</strong> - Aout à Juillet 2020<br>Conception et développement d’une application d’analyse réseau et de surveillance des équipements informatiques.</li>
                 <li><strong>Stage d’initiation (STIR)</strong> - Février à Janvier 2019<br>Gestion de l’espace de travail.</li>
