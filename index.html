@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Firas Dahech</title>
+    <title>CV - Firas Dehech</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -18,14 +18,31 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            border: 1px solid #ddd;
         }
-        h1 {
-            text-align: center;
+        h1, h2 {
             color: #2c3e50;
+            margin-bottom: 10px;
         }
-        h2 {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        .header h1 {
+            font-size: 28px;
+        }
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+        }
+        .section-title {
+            font-size: 20px;
             color: #2980b9;
-            border-bottom: 2px solid #2980b9;
+            margin-top: 20px;
+            border-bottom: 1px solid #2980b9;
             padding-bottom: 5px;
         }
         ul {
@@ -33,125 +50,110 @@
             padding: 0;
         }
         ul li {
-            padding: 8px 0;
-            line-height: 1.6;
+            padding: 5px 0;
         }
-        .contact, .skills, .languages, .experience, .education, .software {
+        .two-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .column {
+            width: 48%;
+        }
+        .project-desc {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .contact, .languages, .skills, .experience, .projects, .education, .atouts {
             margin-bottom: 30px;
         }
-        .skills ul, .experience ul, .education ul, .languages ul, .software ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .profile {
-            background-color: #ecf0f1;
-            padding: 15px;
-            border-left: 5px solid #2980b9;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        /* Additional styling for hover effect */
-        ul li:hover {
-            background-color: #f0f8ff;
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Firas Dahech</h1>
-        <div class="profile">
-            <p>Élève ingénieur en informatique à Iteam-University, spécialité Cloud Computing et Virtualisation. Actuellement à la recherche d’un stage PFE.</p>
+        <div class="header">
+            <h1>Firas Dehech</h1>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:firas.dehech@gmail.com">firas.dehech@gmail.com</a></p>
+                <p>Téléphone: +216 92 690 450</p>
+                <p>Bizerte, Tunisie</p>
+                <p>Né le 24/04/1999</p>
+            </div>
         </div>
 
-        <div class="contact">
-            <h2>Contact</h2>
-            <ul>
-                <li>Téléphone: +216 92690450</li>
-                <li>Email: <a href="mailto:firas.dehech@gmail.com">firas.dehech@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/firas-dehech-b4122a239/">linkedin.com/in/firas-dehech</a></li>
-            </ul>
-        </div>
+        <h2 class="section-title">Profil</h2>
+        <p>Élève ingénieur en informatique à Iteam-University, spécialité Cloud Computing et Virtualisation. Actuellement à la recherche d’un stage PFE.</p>
 
-        <div class="languages">
-            <h2>Langues</h2>
-            <ul>
-                <li>Arabe</li>
-                <li>Français</li>
-                <li>Anglais</li>
-            </ul>
-        </div>
+        <h2 class="section-title">Langues</h2>
+        <ul>
+            <li>Français</li>
+            <li>Arabe</li>
+            <li>Anglais</li>
+        </ul>
 
-        <div class="skills">
-            <h2>Compétences</h2>
-            <ul>
-                <li>Cloud Computing & Virtualisation</li>
-                <li>Administration des systèmes Linux, Windows, Réseaux, Active Directory et Bases de données (Oracle)</li>
-                <li>Conteneurisation (Docker, Kubernetes, OpenShift)</li>
-                <li>CI/CD avec GitHub Actions, Jenkins, Gitlab</li>
-                <li>Infrastructure cloud: AWS, AZURE, OCI, OpenStack</li>
-                <li>Gestion de données: Hadoop, Spark, MapReduce</li>
-                <li>Réseaux: CCNA 1, CCNA 2, CCNA 3</li>
-                <li>Langages de programmation: Python, Bash, SQL, PL/SQL, Java, PHP, HTML, CSS, JavaScript, C</li>
-                <li>Outils d'automatisation: Ansible, Puppet, Terraform</li>
-            </ul>
-        </div>
+        <h2 class="section-title">Compétences</h2>
+        <ul>
+            <li>Outils d'automatisation: Ansible, Puppet, Terraform</li>
+            <li>Langages de programmation: Python, Bash, SQL, PL/SQL, Java, PHP, HTML, CSS, JavaScript, C</li>
+            <li>Réseaux: CCNA 1, CCNA 2, CCNA 3, Packet Tracer, GNS3, eNSP, Wireshark, Snort</li>
+            <li>Base de données: Oracle-database, Wamp-server, Xampp, MySQL, Easy-php</li>
+            <li>Gestion de données: Hadoop, Spark, MapReduce</li>
+            <li>Infrastructure cloud: AWS, AZURE, OCI, OpenStack</li>
+            <li>Virtualisation: Docker Desktop, VirtualBox, VMware, KVM, Hyper-v</li>
+            <li>Conteneurisation: Docker, Kubernetes, OpenShift</li>
+            <li>Administration des systèmes: Linux, Windows, Active Directory</li>
+            <li>Pipeline CI/CD avec GitHub Actions, Jenkins, Gitlab</li>
+        </ul>
 
-        <div class="experience">
-            <h2>Expériences</h2>
-            <ul>
-                <li><strong>Stage de perfectionnement (TSI)</strong> - Juillet à Septembre 2024<br>Administration des Réseaux (Active Directory): gestion des utilisateurs, services (Dns), Domaine entreprise.</li>
-                <li><strong>Stage de fin d’étude (Tunisie Telecom)</strong> - Février à Juin 2022<br>Mise en place d'un cloud privé avec OpenStack et intégration d'une solution Big Data pour le traitement et l'analyse de données massives.</li>
-                <li><strong>Stage de Perfectionnement (Les Ciments de Bizerte)</strong> - Juillet à Aout 2020<br>Conception et développement d’une application d’analyse réseau et de surveillance des équipements informatiques(serveurs).</li>
-                <li><strong>Stage d’initiation (STIR)</strong> - Janvier à Février 2019<br>Gestion de l’espace de travail.</li>
-            </ul>
-        </div>
-        <div class="projects">
-            <h2>Projets</h2>
-            <ul>
-                <li><strong>Création d'un pipeline CI/CD</strong> - 2023<br>
-                    Mise en place d'un pipeline CI/CD pour conteneuriser une application, tester les vulnérabilités avec Trivy scan, et déployer sur un serveur à l'aide de Jenkins et GitHub.</li>
-                
-                <li><strong>Développement d'une application pour la gestion commerciale</strong> - 2023<br>
-                    Développement d'une application python avec la bibliothèque Tkinter pour créer une interface graphique pour la gestion de stock: (vente, achat et inventaire), gestion de client et gestion de caisse.</li>
-                
-                <li><strong>Mise en place de OpenStack</strong> - 2022<br>
-                    Déploiement de OpenStack sur un serveur pour gérer une infrastructure cloud privé.</li>
-                
-                <li><strong>Mise en place de Snort</strong> - 2022<br>
-                    Installation et configuration de Snort pour la détection d'intrusions dans un réseau et la surveillance du trafic en temps réel.</li>
-                
-                <li><strong>Gestion d'un cluster Kubernetes sur OCI</strong> - 2022<br>
-                    Création et gestion d'un cluster Kubernetes sur Oracle Cloud (OCI) pour héberger des applications, avec intégration CI/CD via GitHub Actions.</li>
-                
-                <li><strong>Mise en place de serveurs</strong> - 2021<br>
-                    Mise en place et configuration des serveurs DNS, Nginx, Apache, Postfix, DHCP, NFS et Samba.</li>
-            </ul>
-        </div>
-        <div class="education">
-            <h2>Formation</h2>
-            <ul>
-                <li>2022-2024: Iteam University - Cycle ingénieur en informatique, spécialité Cloud Computing et Virtualisation</li>
-                <li>2019-2022: Institut Supérieur des Études Technologiques de Bizerte - Licence Appliquée en Technologies de l’Informatique, spécialité Réseaux et Services Informatiques</li>
-                <li>2018: Lycée El Alia - Baccalauréat en Sciences de l'informatique</li>
-            </ul>
-        </div>
+        <h2 class="section-title">Expériences professionnelles</h2>
+        <ul>
+            <li><strong>Stage de perfectionnement (TSI)</strong> - Juillet à Août 2024<br>
+            Administration des Réseaux (Active Directory): gestion des utilisateurs, services (DNS), Domaine entreprise.</li>
+            <li><strong>Stage de fin d'étude (Tunisie Telecom)</strong> - Février à Juin 2022<br>
+            Mise en place d'un cloud privé avec OpenStack et intégration d'une solution Big Data pour le traitement et l'analyse de données massives.</li>
+            <li><strong>Stage de Perfectionnement (Les Ciments de Bizerte)</strong> - Juillet à Août 2020<br>
+            Conception et développement d’une application d’analyse réseau et de surveillance des équipements informatiques.</li>
+            <li><strong>Stage d’initiation (STIR)</strong> - Janvier à Février 2019<br>Gestion de l’espace de travail.</li>
+        </ul>
 
-        <div class="software">
-            <h2>Logiciels</h2>
-            <ul>
-                <li>Packet Tracer, GNS3, eNSP</li>
-                <li>Oracle-database, Wamp-server, Xampp, MySQL, Easy-php</li>
-                <li>Docker Desktop, VirtualBox, VMware, KVM, Hyper-v</li>
-                <li>IntelliJ, NetBeans</li>
-                <li>Wireshark, Snort</li>
-            </ul>
+        <h2 class="section-title">Projets</h2>
+        <ul>
+            <li><strong>Création d'un pipeline CI/CD</strong> - 2023<br>
+            Mise en place d'un pipeline CI/CD pour conteneuriser une application, tester les vulnérabilités avec Trivy scan, et déployer sur un serveur à l'aide de Jenkins et GitHub.</li>
+            <li><strong>Développement d'une application pour la gestion commerciale</strong> - 2023<br>
+            Application Python avec interface Tkinter pour la gestion des stocks, des ventes, et des clients.</li>
+            <li><strong>Mise en place de OpenStack</strong> - 2023<br>
+            Déploiement d'une infrastructure cloud privée avec OpenStack.</li>
+            <li><strong>Mise en place de Snort</strong> - 2023<br>
+            Installation et configuration de Snort pour la détection d'intrusions et la surveillance réseau.</li>
+            <li><strong>Gestion d'un cluster Kubernetes sur OCI</strong> - 2023<br>
+            Création et gestion d'un cluster Kubernetes sur Oracle Cloud avec intégration CI/CD via GitHub Actions.</li>
+            <li><strong>Mise en place de serveurs</strong> - 2023<br>
+            Configuration des serveurs DNS, Nginx, Apache, Postfix, DHCP, NFS, Samba.</li>
+        </ul>
+
+        <h2 class="section-title">Diplômes et Formations</h2>
+        <ul>
+            <li><strong>Cycle ingénieur en informatique, spécialité Cloud Computing et Virtualisation</strong> - 2022 à 2024<br>Iteam University, Tunis, Tunisie</li>
+            <li><strong>Licence Appliquée en Technologies de l'Informatique, spécialité Réseaux et Services Informatiques</strong> - 2019 à 2022<br>Institut Supérieur des Études Technologiques de Bizerte, Tunisie</li>
+            <li><strong>Baccalauréat en Sciences de l'informatique</strong> - 2018<br>Lycée El Alia, Bizerte</li>
+        </ul>
+
+        <h2 class="section-title">Atouts</h2>
+        <ul>
+            <li>Sociable, bonne capacité à travailler en équipe</li>
+            <li>Participation à des projets collaboratifs</li>
+        </ul>
+
+        <div class="footer">
+            <p>&copy; 2024 Firas Dehech - Tous droits réservés</p>
         </div>
     </div>
 </body>
