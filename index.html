@@ -27,12 +27,19 @@
         .header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 30px;
             padding-bottom: 10px;
             border-bottom: 2px solid #2c3e50;
         }
         .header h1 {
             font-size: 28px;
+        }
+        .photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
         }
         .contact-info {
             text-align: right;
@@ -44,6 +51,7 @@
             margin-top: 20px;
             border-bottom: 1px solid #2980b9;
             padding-bottom: 5px;
+            margin-bottom: 10px;
         }
         ul {
             list-style-type: none;
@@ -79,12 +87,17 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Firas Dehech</h1>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:firas.dehech@gmail.com">firas.dehech@gmail.com</a></p>
-                <p>Téléphone: +216 92 690 450</p>
-                <p>Bizerte, Tunisie</p>
-                <p>Né le 24/04/1999</p>
+            <div>
+                <h1>Firas Dehech</h1>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:firas.dehech@gmail.com">firas.dehech@gmail.com</a></p>
+                    <p>Téléphone: +216 92 690 450</p>
+                    <p>Bizerte, Tunisie</p>
+                    <p>Né le 24/04/1999</p>
+                </div>
+            </div>
+            <div>
+                <img src="photo (2).jpg" alt="Photo de Firas Dehech" class="photo">
             </div>
         </div>
 
