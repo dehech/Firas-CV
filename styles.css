@@ -1,0 +1,107 @@
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #000;
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --primary-color: #2980b9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.theme-toggle {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* Mode sombre */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+    --primary-color: #ff5722;
+}
+
+.photo {
+    border-radius: 50%;
+    width: 100px; /* Réduire la largeur à 100px */
+    height: 100px; /* Réduire la hauteur à 100px */
+    object-fit: cover; /* Assure que l'image reste bien cadrée */
+    border: 2px solid var(--primary-color); /* Ajout d'une bordure élégante */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optionnel : ajout d'une ombre */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Place les éléments aux extrémités */
+    align-items: center; /* Centre verticalement les éléments */
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.header div:last-child {
+    order: 2; /* Place la photo à droite */
+}
