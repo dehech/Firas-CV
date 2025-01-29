@@ -16,7 +16,6 @@ body {
 }
 
 .navbar {
-    display: grid
     background-color: var(--primary-color);
     padding: 10px 20px;
     display: flex;
