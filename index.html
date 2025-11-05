@@ -3,131 +3,767 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Firas Dehech</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio - Firas Dehech | Ingénieur Cloud & DevOps</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --text: #333;
+            --bg: #fff;
+            --card-bg: #f8f9fa;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #34495e;
+            --accent: #e74c3c;
+            --light: #2c3e50;
+            --dark: #ecf0f1;
+            --gray: #7f8c8d;
+            --text: #ecf0f1;
+            --bg: #1a1a2e;
+            --card-bg: #16213e;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg);
+            box-shadow: 0 2px 10px var(--shadow);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .navbar a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .navbar a:hover {
+            color: var(--primary);
+        }
+
+        .navbar a:hover:after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 120px 0 60px;
+            flex-wrap: wrap;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        .photo-container {
+            flex-shrink: 0;
+        }
+
+        .photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--shadow);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 25px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--shadow);
+            position: relative;
+        }
+
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            right: -50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -50px;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Projects */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-links {
+            margin-top: auto;
+            padding-top: 15px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .project-links a:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 100px 0 40px;
+            }
+
+            .header-content {
+                padding-right: 0;
+                margin-top: 30px;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .timeline:before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content:after {
+                left: -40px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+            }
+
+            .navbar ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .navbar li {
+                margin: 5px 10px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .photo {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <ul>
-            <li><a href="#profil">Profil</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#experiences">Expériences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#formations">Formations</a></li>
-        </ul>
-        <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+        <div class="container">
+            <ul>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i> Mode sombre
+            </button>
+        </div>
     </nav>
 
     <div class="container">
         <header class="header">
-            <div>
+            <div class="header-content">
                 <h1>Mohamed Firas Dehech</h1>
+                <h2>Ingénieur Cloud Computing & DevOps</h2>
+                <p>Spécialisé en Cloud Computing, Virtualisation, DevOps, et mise en place de pipelines CI/CD. Passionné par les défis techniques et la résolution de problèmes complexes.</p>
+                
                 <div class="contact-info">
                     <p><i class="fas fa-envelope"></i> <a href="mailto:firas.dehech@gmail.com">firas.dehech@gmail.com</a></p>
                     <p><i class="fas fa-phone"></i> <a href="tel:+21692690450">+216 92 690 450</a></p>
                     <p><i class="fas fa-map-marker-alt"></i> Bizerte El Alia, Tunisie</p>
-                    <p><i class="fas fa-birthday-cake"></i> Né le 24/04/1999</p>
                     <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/firas-dehech-b4122a239" target="_blank">Firas Dehech</a></p>
                     <p><i class="fab fa-github"></i> <a href="https://github.com/dehech" target="_blank">dehech</a></p>
                 </div>
             </div>
-            <div>
+            <div class="photo-container">
                 <img src="photo_cv.jpg" alt="Photo de Firas Dehech" class="photo">
             </div>
         </header>
 
         <section id="profil">
             <h2 class="section-title">Profil</h2>
-            <p>Ingénieur en informatique, spécialisé en Cloud Computing, Virtualisation, DevOps, ainsi que dans la mise en place de pipelines CI/CD utilisant GitHub Actions et Jenkins, intégrés avec Docker et Kubernetes pour le déploiement d’applications. Passionné par les défis techniques et la résolution de problèmes complexes, je souhaite contribuer à des projets innovants dans le domaine du Cloud et des technologies modernes.</p>
-
-        </section>    
-
-        <section id="langues">
-            <h2 class="section-title">Langues</h2>
-            <ul>
-                <li>Français</li>
-                <li>Arabe</li>
-                <li>Anglais</li>
-            </ul>
+            <p>Ingénieur en informatique, spécialisé en Cloud Computing, Virtualisation, DevOps, ainsi que dans la mise en place de pipelines CI/CD utilisant GitHub Actions et Jenkins, intégrés avec Docker et Kubernetes pour le déploiement d'applications. Passionné par les défis techniques et la résolution de problèmes complexes, je souhaite contribuer à des projets innovants dans le domaine du Cloud et des technologies modernes.</p>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Langues</h3>
+                    <ul>
+                        <li>Français</li>
+                        <li>Arabe</li>
+                        <li>Anglais</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Atouts</h3>
+                    <ul>
+                        <li>Sociable</li>
+                        <li>Passionné par les défis techniques</li>
+                        <li>Résolution de problèmes</li>
+                        <li>Projets collaboratifs</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Télécharger mon CV</h3>
+                    <p><a href="CV_Mohamed_Firas_Dahech.pdf" download="CV_Mohamed_Firas_Dahech.pdf" class="project-links">📥 Télécharger (PDF)</a></p>
+                </div>
+            </div>
         </section>
 
         <section id="competences">
             <h2 class="section-title">Compétences</h2>
-            <ul>
-                <li>Outils d'automatisation: Ansible, Puppet, Terraform</li>
-                <li>Langages de programmation: Python, Bash, SQL, PL/SQL, Java, PHP, HTML, CSS, JavaScript, C, Node.js</li>
-                <li>Frameworks: React.js (frontend), Express.js (backend)</li>
-                <li>Réseaux: CCNA 1, CCNA 2, CCNA 3, Packet Tracer, GNS3, eNSP, Wireshark, Snort</li>
-                <li>Base de données: Oracle-database, Wamp-server, Xampp, MySQL, Easy-php</li>
-                <li>Gestion de données: Hadoop, Spark, MapReduce</li>
-                <li>Infrastructure cloud: AWS, AZURE, OCI, OpenStack, Huawei Cloud Stack</li>
-                <li>Virtualisation: Docker Desktop, VirtualBox, VMware, KVM, Hyper-v</li>
-                <li>Conteneurisation: Docker, Kubernetes, OpenShift</li>
-                <li>Administration et IAM: Linux, Windows, Active Directory, Keycloak</li>
-                <li>Pipeline CI/CD avec GitHub Actions, Jenkins, Gitlab</li>
-            </ul>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Outils d'automatisation</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Ansible</span>
+                        <span class="skill-tag">Puppet</span>
+                        <span class="skill-tag">Terraform</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Langages de programmation</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">SQL/PLSQL</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Express.js</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Réseaux</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">CCNA 1-3</span>
+                        <span class="skill-tag">Packet Tracer</span>
+                        <span class="skill-tag">GNS3</span>
+                        <span class="skill-tag">eNSP</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Snort</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Bases de données</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Wamp/Xampp</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Big Data</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Hadoop</span>
+                        <span class="skill-tag">Spark</span>
+                        <span class="skill-tag">MapReduce</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">OCI</span>
+                        <span class="skill-tag">OpenStack</span>
+                        <span class="skill-tag">Huawei Cloud</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Virtualisation</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">OpenShift</span>
+                        <span class="skill-tag">VirtualBox</span>
+                        <span class="skill-tag">VMware</span>
+                        <span class="skill-tag">KVM</span>
+                        <span class="skill-tag">Hyper-V</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Administration</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Windows</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">Keycloak</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>CI/CD</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">GitLab</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="experiences">
             <h2 class="section-title">Expériences professionnelles</h2>
-            <ul>
-                <li><strong>Stage de fin d'études (Huawei)</strong> - Mars à Juin 2025<br>
-                Développement d’une marketplace de services cloud pour Huawei Cloud Stack (React.js, Node.js, Docker, Terraform, Kubernetes).</li>
-                <li><strong>Stage de perfectionnement (TSI)</strong> - Juillet à Août 2024<br>
-                Administration des Réseaux (Active Directory): gestion des utilisateurs, services (DNS), Domaine entreprise.</li>
-                <li><strong>Stage de fin d'étude (Tunisie Telecom)</strong> - Février à Juin 2022<br>
-                Mise en place d'un cloud privé avec OpenStack et intégration d'une solution Big Data.</li>
-                <li><strong>Stage de Perfectionnement (Les Ciments de Bizerte)</strong> - Juillet à Août 2020<br>
-                Conception et développement d’une application d’analyse réseau et de surveillance des équipements informatiques.</li>
-                <li><strong>Stage d’initiation (STIR)</strong> - Janvier à Février 2019<br>
-                Gestion de l’espace de travail.</li>
-            </ul>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Mars - Juin 2025</div>
+                        <h3>Stage de fin d'études - Huawei</h3>
+                        <p>Développement d'une marketplace de services cloud pour Huawei Cloud Stack (React.js, Node.js, Docker, Terraform, Kubernetes).</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Juillet - Août 2024</div>
+                        <h3>Stage de perfectionnement - TSI</h3>
+                        <p>Administration des Réseaux (Active Directory): gestion des utilisateurs, services (DNS), Domaine entreprise.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Février - Juin 2022</div>
+                        <h3>Stage de fin d'étude - Tunisie Telecom</h3>
+                        <p>Mise en place d'un cloud privé avec OpenStack et intégration d'une solution Big Data.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Juillet - Août 2020</div>
+                        <h3>Stage de Perfectionnement - Les Ciments de Bizerte</h3>
+                        <p>Conception et développement d'une application d'analyse réseau et de surveillance des équipements informatiques.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Janvier - Février 2019</div>
+                        <h3>Stage d'initiation - STIR</h3>
+                        <p>Gestion de l'espace de travail.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="projets">
             <h2 class="section-title">Projets</h2>
-            <ul>
-                <li><strong>Création d'un pipeline CI/CD</strong><br>
-                    Mise en place d'un pipeline CI/CD pour conteneuriser une application, tester les vulnérabilités avec Trivy scan, et déployer sur un serveur à l'aide de Jenkins et GitHub.<br>
-                    🔗 <a href="https://github.com/dehech/PIPELINE-CI-CD.git" target="_blank">Voir le projet sur GitHub</a></li>
-                <li><strong>Développement d'une application pour la gestion commerciale</strong><br>
-                    Application Python avec interface Tkinter pour la gestion des stocks, des ventes, et des clients.</li>
-                <li><strong>Mise en place de OpenStack</strong><br>
-                    Déploiement d'une infrastructure cloud privée avec OpenStack.</li>
-                <li><strong>Mise en place de Snort</strong><br>
-                    Installation et configuration de Snort pour la détection d'intrusions et la surveillance réseau.</li>
-                <li><strong>Gestion d'un cluster Kubernetes sur OCI</strong><br>
-                    Création et gestion d'un cluster Kubernetes sur Oracle Cloud avec intégration CI/CD via GitHub Actions.<br>
-                    🔗 <a href="https://github.com/dehech/ORACLE-K8S-CI-CD.git" target="_blank">Voir le projet sur GitHub</a></li>
-                <li><strong>Mise en place de serveurs</strong><br>
-                    Configuration des serveurs DNS, Nginx, Apache, Postfix, DHCP, NFS, Samba.</li>
-            </ul>
+            
+            <div class="cards-container">
+                <div class="card project-card">
+                    <h3>Pipeline CI/CD</h3>
+                    <p>Mise en place d'un pipeline CI/CD pour conteneuriser une application, tester les vulnérabilités avec Trivy scan, et déployer sur un serveur à l'aide de Jenkins et GitHub.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/dehech/PIPELINE-CI-CD.git" target="_blank">Voir sur GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="card project-card">
+                    <h3>Gestion d'un cluster Kubernetes sur OCI</h3>
+                    <p>Création et gestion d'un cluster Kubernetes sur Oracle Cloud avec intégration CI/CD via GitHub Actions.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/dehech/ORACLE-K8S-CI-CD.git" target="_blank">Voir sur GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="card project-card">
+                    <h3>Application de gestion commerciale</h3>
+                    <p>Application Python avec interface Tkinter pour la gestion des stocks, des ventes, et des clients.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/dehech/gestion-commercial" target="_blank">Voir sur GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="card project-card">
+                    <h3>Mise en place de OpenStack</h3>
+                    <p>Déploiement d'une infrastructure cloud privée avec OpenStack.</p>
+                </div>
+                
+                <div class="card project-card">
+                    <h3>Mise en place de Snort</h3>
+                    <p>Installation et configuration de Snort pour la détection d'intrusions et la surveillance réseau.</p>
+                </div>
+                
+                <div class="card project-card">
+                    <h3>Configuration de serveurs</h3>
+                    <p>Configuration des serveurs DNS, Nginx, Apache, Postfix, DHCP, NFS, Samba.</p>
+                </div>
+            </div>
         </section>
 
         <section id="formations">
             <h2 class="section-title">Formations</h2>
-            <ul>
-                <li><strong>Cycle ingénieur en informatique, spécialité Cloud Computing et Virtualisation</strong> - 2022 à 2024<br><a href="https://iteam-univ.tn/">iTeam University</a>, Tunis, Tunisie</li>
-                <li><strong>Licence Appliquée en Technologies de l'Informatique, spécialité Réseaux et Services Informatiques</strong> - 2019 à 2022<br><a href="https://isetbz.rnu.tn/">Supérieur des Études Technologiques de Bizerte</a>, Tunisie</li>
-                <li><strong>Baccalauréat en Sciences de l'informatique</strong> - 2018<br>Lycée El Alia, Bizerte</li>
-            </ul>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Cycle ingénieur en informatique</h3>
+                    <p><strong>Spécialité Cloud Computing et Virtualisation</strong></p>
+                    <p>2022 - 2024</p>
+                    <p><a href="https://iteam-univ.tn/">iTeam University</a>, Tunis, Tunisie</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Licence Appliquée en Technologies de l'Informatique</h3>
+                    <p><strong>Spécialité Réseaux et Services Informatiques</strong></p>
+                    <p>2019 - 2022</p>
+                    <p><a href="https://isetbz.rnu.tn/">Supérieur des Études Technologiques de Bizerte</a>, Tunisie</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Baccalauréat en Sciences de l'informatique</h3>
+                    <p>2018</p>
+                    <p>Lycée El Alia, Bizerte</p>
+                </div>
+            </div>
         </section>
 
-        <section id="atouts">
-            <h2 class="section-title">Atouts</h2>
-            <ul>
-                <li>Sociable</li>
-                <li>Passionné par les défis techniques et la résolution de problèmes</li>
-                <li>Participation à des projets collaboratifs</li>
-            </ul>
-        </section>
-
-        <section id="resume">
-            <h2 class="section-title">Télécharger mon CV</h2>
-            <ul>
-                <li><p><a href="CV_Mohamed_Firas_Dahech.pdf" download="CV_Mohamed_Firas_Dahech.pdf">📥 Télécharger mon CV (PDF)</a></p></li>
-            </ul>
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:firas.dehech@gmail.com">firas.dehech@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+21692690450">+216 92 690 450</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Bizerte El Alia, Tunisie</p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/firas-dehech-b4122a239" target="_blank">Firas Dehech</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/dehech" target="_blank">dehech</a></p>
+            </div>
         </section>
 
         <footer>
@@ -135,6 +771,63 @@
         </footer>
     </div>
 
-    <script src="scripts.js"></script>
+    <script>
+        // Mode sombre/clair
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.className = 'fas fa-sun';
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i> Mode clair';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i> Mode sombre';
+            }
+        });
+
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
