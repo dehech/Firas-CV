@@ -449,3 +449,10 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Fix navbar qui cache le header en mobile */
+@media (max-width: 768px) {
+    body {
+        padding-top: 140px; /* hauteur réelle de la navbar mobile */
+    }
+}
