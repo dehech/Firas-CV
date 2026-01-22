@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Geordle Unlimited - Worldle for Countries and Capitals</title>
+	<link href="practice.css" rel="stylesheet">
+	<script defer src="practice.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- add icon link for all standard browsers -->
+    <link rel = "icon" href = "https://theworldle.github.io/geordle/mapicon.jpg" 
+            type = "image/x-icon">  
+	<link rel="manifest" href="https://theworldle.github.io/geordle/geordle_manifest.json" />		<!--for shortcut icons and transitions-->	
+	<link href="https://theworldle.github.io/geordle/mapicon.jpg" rel="icon shortcut" sizes="3232" /> <!--follow same as indle - usually a smaller version-->
+	<link href="https://theworldle.github.io/geordle/mapicon.jpg" rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
+</head>
+<body>
+	<div id="icons">
+		<div id="icons-item">
+			<span class="icons-item">
+				<class data-modal-target="#modal" id="rulesbutton"><img src="rulesicon.png" style="width:30px;height:30px;">
+			</span>
+			<!--	
+			<span class="icons-item">
+				<a href="https://theworldle.github.io/geordle/"><img src="clock.jpg" style="width:30px;height:30px" alt ="Daily Mode"></a>
+			</span>
+			-->			
+		</div>
+	</div>
+	<center><img class="headerimage" src="maporig.jpg">
+	<div id="title">
+		<div class="waviy">
+			<span style="--i:1">G</span>
+			<span style="--i:2">E</span>
+			<span style="--i:3">O</span>
+			<span style="--i:4">R</span>
+			<span style="--i:5">D</span>
+			<span style="--i:6">L</span>
+			<span style="--i:7">E</span>
+		</div>
+	</div>
+	<div class="waviy1">
+		<span style="--i:1">p</span>
+		<span style="--i:2">r</span>
+		<span style="--i:3">a</span>
+		<span style="--i:4">c</span>
+		<span style="--i:5">t</span>
+		<span style="--i:6">i</span>
+		<span style="--i:7">c</span>
+		<span style="--i:8">e</span>
+		<span style="--i:9"></span>
+		<span style="--i:10">m</span>
+		<span style="--i:11">o</span>
+		<span style="--i:12">d</span>		
+		<span style="--i:13">e</span>
+	</div><br>
+	<!-- <button data-modal-target="#modal" class="buttonrad1">❓RULES</button>  
+	<!-- <input type="button" id="" value="🌎 DAILY" onclick="window.open('https://theworldle.github.io/geordle/' , '_self'); this.blur();" class="buttonrad1"> 
+	<input type="button" id="" value="😊 CLASSIC" onclick="window.open('https://theworldle.github.io/geordle/classic' , '_self'); this.blur();" class="buttonrad">	
+	<input type="button" value="❤️ GEORDLE️" onclick="window.open('https://theworldle.com/','_blank'); this.blur();" class="buttonrad">		
+	</center>	-->
+	<div class="modal" id="modal">
+		<div class="modal-header">
+			<div class="title"><strong>
+					<!-- How To Play -->
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<h3 class="animate-charcter">How To Play</h3>
+							</div>
+						</div>
+					</div>
+				</strong></div>
+				<button data-close-button class="close-button">&times;</button>
+		</div>
+		<div class ="modal-body">
+		  GEORDLE is a spin-off on the popular <a href="https://theworldle.com"><b>WORLDLE</b></a> game for Geography Lovers. 
+		  <br><br>
+		  Try to identify the COUNTRY and its CAPITAL using the letters on the Keyboard <b>ONE AT A TIME</b>. If the letter you selected is part of the COUNTRY or CAPITAL, the corresponding tiles will be highlighted in Green. 
+		  <br><br>
+		  Each incorrect letter will cost you a Life. You have a total of 5 lives after which you lose the game. Lives Remaining are depicted using 🔴 on the Game Board.
+<!--      <br><br>
+		  In the Easy Mode, the length of the guess NEED NOT match the lenth of the answer. To challenge yourself, try the Hard Mode.
+		  <br><br>
+		  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts. -->
+		  <br><br>
+		  This is the Practice mode, where you get unlimited attempts. Switch to the DAILY Mode, where you can play the actual game.   
+		  <br><br>
+		  In this mode mode, your attempts are timed. There is a 5 sec time penalty for each life lost.  
+		  <br><br>		  
+		  <center><b>EXAMPLES</b><br></center>
+		  <br><div><u>COUNTRY</u></div><br>
+			<div style="float:left; display:flex;">
+				<span class="tile "></span>
+				<span class="tile "></span>
+				<span class="tile correct">D</span>
+				<span class="tile "></span>
+				<span class="tile "></span>
+				<span class="tile "></span>
+			</div>
+			<br><br><br>
+			The letter 'D' is in the 3rd position of the Country.
+			<br><br>	
+		  <br><div><u>CAPITAL</u></div><br>
+			<div style="float:left; display:flex;">
+				<span class="tile correct">A</span>
+				<span class="tile "></span>
+				<span class="tile "></span>
+				<span class="tile correct">A</span>
+				<span class="tile "></span>
+				<span class="tile correct">A</span>
+			</div>
+			<br><br><br>
+			The letter 'A' is in the 1st, 4th and 6th position of the Capital.
+			<br><br>			
+		  <center><b>Practice multiple times a day!<b></center>
+		  <!--<div class="email"><a href="mailto: contact@theworldle.com">📧</a></div>-->
+		</div>		
+	</div>
+	<div id="overlay"></div>
+		<hr>				
+    <div id="stats"> 
+		<div id="stats-item">
+		<span id="wins"></span>	
+			<input type="button" id="" value="🔄" onclick="window.location.reload(); this.blur();" class="buttonref">
+		<span id="time"></span>
+		</div>			
+	</div>	
+	<br>
+    <div id="lives">
+	</div>	
+    <div id="board">
+		<br><div><u>COUNTRY</u></div><br>
+		<div id="boardfirst"></div>
+		<br><div><u>CAPITAL</u></div><br>
+		<div id="boardlast"></div>	
+	</div>
+	<br>
+	<hr>
+    <h1 id="answer"></h1>
+	   <br><br><br>
+    </body>
+</html>
+
