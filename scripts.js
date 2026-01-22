@@ -54,3 +54,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Fonction pour le bouton "Top"
+document.addEventListener('DOMContentLoaded', function() {
+    const topButton = document.getElementById('topButton');
+    
+    // Afficher/cacher le bouton quand on scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            topButton.classList.add('show');
+        } else {
+            topButton.classList.remove('show');
+        }
+    });
+    
+    // Fonction pour remonter en haut
+    topButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
