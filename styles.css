@@ -454,9 +454,10 @@ footer {
 @media (max-width: 768px) {
     body {
         padding-top: 140px; /* hauteur réelle de la navbar mobile */
- /*   }
-}
-*/
+  /*  }
+}*/
+
+
 @media (max-width: 768px) {
     body {
         padding-top: 150px;
@@ -466,6 +467,10 @@ footer {
         padding-top: 20px;
     }
 }
+
+
+
+
 
 /* Styles pour le bouton Top */
 .top-button {
