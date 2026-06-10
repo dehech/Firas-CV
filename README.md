@@ -8,7 +8,7 @@ Ce dépôt contient les fichiers source de mon portfolio personnel, présentant 
 
 Le portfolio est accessible à l'adresse suivante :
 
-➡️ [Visiter mon portfolio](https://github.com/dehech/Firas-CV)
+➡️ [Visiter mon portfolio](https://dehech.github.io/Firas-CV/)
 
 ## 📋 Contenu
 
